@@ -49,7 +49,6 @@ def transform_load_data(infile, outfile):
                 # Modify the fourth field (index 3) and convert to uppercase
                 row[3] = row[3].upper()
                 writer.writerow(row)
-            
 
 #Define Dag arguments
 default_args = {
@@ -127,5 +126,6 @@ transform_data = PythonOperator(
     op_args = [extracted_data, transformed_data],
     dag = dag
 )
+
 
 unzip_data >> extract_data_from_csv >> extract_data_from_tsv >> extract_fixed_width >> consolidate_data >> transform_data
