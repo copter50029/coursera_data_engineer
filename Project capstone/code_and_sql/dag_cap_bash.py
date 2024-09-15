@@ -35,7 +35,7 @@ transform = BashOperator(
 # define the third task
 load = BashOperator(
     task_id='load',
-    bash_command='tar -zcvf $AIRFLOW_HOME/dags/capstone/weblog.tar $AIRFLOW_HOME/dags/capstone/transformed_data.txt',
+     bash_command='tar -zcvf $AIRFLOW_HOME/dags/capstone/weblog.tar $AIRFLOW_HOME/dags/capstone/transformed_data.txt',
     dag=dag,
 )
 # task pipeline
